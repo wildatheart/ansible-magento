@@ -1,0 +1,21 @@
+---
+# Which version of Magento to deploy
+mag_version: 1.8.1.0
+
+# These are the Magento database settings
+mag_db_name: magento 
+mag_db_user: magento
+mag_db_password: [[ENTERPASSWORD]]
+
+# MySQL Root Pass
+mysql_root_db_pass: PutYourDBPasswdHere
+
+# You shouldn't need to change this.
+mysql_port: 3306
+
+# This is used for the nginx server configuration, but # access to the
+# Magento site is not restricted by a # named host.
+server_hostname: localhost
+
+# Default Domain for Remote Machine
+default_domain: skdev.com

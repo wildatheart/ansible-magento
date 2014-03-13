@@ -1,0 +1,9 @@
+php -f install.php -- \
+--license_agreement_accepted yes \
+--locale nl_NL --timezone "Europe/Berlin" --default_currency EUR \
+--db_host localhost --db_name {{ magento_database_name }} --db_user {{ magento_database_user }} --db_pass {{ magento_database_password }} \
+--db_prefix magento_ \
+--url ”{{ http://magentobase-url/ }}” --use_rewrites yes \
+--use_secure no --secure_base_url ”{{ http://magentose-url }}” --use_secure_admin no \
+--admin_lastname Owner --admin_firstname Store --admin_email ”{{ admin@example.com }}” \
+--admin_username admin --admin_password {{ admin_password }}
