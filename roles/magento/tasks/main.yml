@@ -3,13 +3,13 @@
   get_url: url=http://www.magentocommerce.com/downloads/assets/{{ mag_version }}/magento-{{ mag_version }}.tar.gz dest=/var/www/magento-{{ mag_version }}.tar.gz
 
 - name: Extract Archive
-  command: chdir=/var/www/ /bin/tar xvf magento-{{ mag_version }}.tar.gz creates=/var/www/{{ domain-name }}
+  command: chdir=/var/www/ /bin/tar xvf magento-{{ mag_version }}.tar.gz creates=/var/www/{{ domain_name }}
 
 - name: Add group "nginx"
   group: name=nginx
 
 - name: Change ownership of Magento installation
-  file: path=/var/www/{{ domain-name }}/ owner=nginx group=nginx state=directory recurse=yes
+  file: path=/var/www/{{ domain_name }}/ owner=nginx group=nginx state=directory recurse=yes
 
 - name: Create Magento database
   mysql_db: name={{ mag_db_name }} state=present
