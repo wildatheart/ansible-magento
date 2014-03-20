@@ -1,10 +1,10 @@
 map $http_host $magesite { 
-  {{ domain-name }} {{ store-code }};
+  {{ domain_name }} {{ store_code }};
 }
 server {
     listen 80;
 ##     listen 80;	
-    server_name {{ domain-name }};
+    server_name {{ domain_name }};
     rewrite / $scheme://www.$host$request_uri permanent; ## Forcibly prepend a www
 }
  
@@ -12,8 +12,8 @@ server {
     listen 80 default;
 ##    listen 80 default;
 ## SSL directives might go here
-##  server_name  www.{{ domain-name }} *.{{ domain-name }}; ## Domain is here twice so server_name_in_redirect will favour the www
-    root /var/www/{{ domain-name }};
+##  server_name  www.{{ domain_name }} *.{{ domain_name }}; ## Domain is here twice so server_name_in_redirect will favour the www
+    root /var/www/{{ domain_name }};
  
     location / {
         index index.html index.php; ## Allow a static html file to be shown first
